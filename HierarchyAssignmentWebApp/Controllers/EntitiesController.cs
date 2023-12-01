@@ -97,6 +97,8 @@ namespace HierarchyAssignmentWebApp.Controllers
             {
                 try
                 {
+                    
+                    entity.Modified = DateTime.Now;                 // Update the Modified Date
                     _context.Update(entity);
                     await _context.SaveChangesAsync();
                 }

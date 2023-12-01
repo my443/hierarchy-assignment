@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HierarchyAssignmentWebApp.Migrations
 {
     [DbContext(typeof(HierarchyAssignmentWebAppContext))]
-    [Migration("20231130112439_InitialCreate")]
+    [Migration("20231201112149_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -34,6 +34,7 @@ namespace HierarchyAssignmentWebApp.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("DateAdded")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("EntityCode")
@@ -43,6 +44,7 @@ namespace HierarchyAssignmentWebApp.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("Modified")
+                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");

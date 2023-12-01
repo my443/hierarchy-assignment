@@ -10,13 +10,13 @@ namespace HierarchyAssignmentWebApp.Models
         public string? EntityCode { get; set; }
 
 
-        //[DataType(DataType.Date)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DataType(DataType.DateTime)]
         public DateTime DateAdded { get; set; }
 
-
-//        [DataType(DataType.Date)]
-        [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        
+        //[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
+        [DataType(DataType.DateTime)]
         public DateTime Modified { get; set; }
 
     }
